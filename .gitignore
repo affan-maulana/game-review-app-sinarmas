@@ -1,2 +1,39 @@
-/prompt*
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Docker
+docker-compose.override.yml
+
+# CommandCode
 /.commandcode*
+/prompt*
