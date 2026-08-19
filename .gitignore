@@ -35,5 +35,5 @@ coverage/
 docker-compose.override.yml
 
 # CommandCode
-/.commandcode*
-/prompt*
+
+
