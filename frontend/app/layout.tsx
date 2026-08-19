@@ -24,10 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
+      <body className="min-h-full flex flex-col bg-black">
+        <header className="bg-gray-900 border-b border-gray-700">
           <div className="max-w-6xl mx-auto px-4 py-4">
-            <Link href="/" className="text-xl font-bold text-gray-900 hover:text-blue-600">
+            <Link href="/" className="text-xl font-bold text-white hover:text-blue-400">
               Game Reviews
             </Link>
           </div>

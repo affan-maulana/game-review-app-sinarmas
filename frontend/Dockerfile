@@ -1,15 +1,17 @@
 FROM node:20-alpine AS builder
 
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN NODE_ENV=development npm ci
+COPY package.json pnpm-lock.yaml ./
+RUN NODE_ENV=development pnpm install --frozen-lockfile
 
 COPY . .
 
-ENV NEXT_PUBLIC_API_URL=http://backend:3001
+ENV NEXT_PUBLIC_API_URL=http://localhost:3001
 
-RUN npm run build
+RUN pnpm run build
 
 FROM node:20-alpine AS runner
 
@@ -19,6 +21,7 @@ ENV NODE_ENV=production
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/public ./public
 
 EXPOSE 3000

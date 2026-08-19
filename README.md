@@ -92,8 +92,8 @@ Backend runs on `http://localhost:3001`
 
 ```bash
 cd frontend
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Frontend runs on `http://localhost:3000`
@@ -121,7 +121,7 @@ go test -race ./...
 
 ```bash
 cd frontend
-npm test
+pnpm test
 ```
 
 ## Seed Data

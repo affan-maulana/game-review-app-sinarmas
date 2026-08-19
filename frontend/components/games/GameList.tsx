@@ -11,7 +11,7 @@ interface GameListProps {
 
 export function GameList({ games, loading, error }: GameListProps) {
   if (loading) {
-    return <p className="text-gray-500">Loading games...</p>;
+    return <p className="text-gray-300">Loading games...</p>;
   }
 
   if (error) {
@@ -19,7 +19,7 @@ export function GameList({ games, loading, error }: GameListProps) {
   }
 
   if (games.length === 0) {
-    return <p className="text-gray-500">No games found.</p>;
+    return <p className="text-gray-300">No games found.</p>;
   }
 
   return (

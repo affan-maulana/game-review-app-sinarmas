@@ -11,7 +11,7 @@ interface ReviewListProps {
 
 export function ReviewList({ reviews, loading, error }: ReviewListProps) {
   if (loading) {
-    return <p className="text-gray-500">Loading reviews...</p>;
+    return <p className="text-gray-300">Loading reviews...</p>;
   }
 
   if (error) {
@@ -20,7 +20,7 @@ export function ReviewList({ reviews, loading, error }: ReviewListProps) {
 
   if (reviews.length === 0) {
     return (
-      <p className="text-gray-500">
+      <p className="text-gray-300">
         No reviews yet. Be the first to review!
       </p>
     );

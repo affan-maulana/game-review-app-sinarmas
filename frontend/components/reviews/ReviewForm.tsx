@@ -58,12 +58,12 @@ export function ReviewForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <h3 className="text-lg font-semibold text-gray-900">Write a Review</h3>
+      <h3 className="text-lg font-semibold text-white">Write a Review</h3>
 
       {validationErrors.length > 0 && (
-        <div className="bg-red-50 border border-red-200 rounded p-3">
+        <div className="bg-red-900/30 border border-red-700 rounded p-3">
           {validationErrors.map((err, i) => (
-            <p key={i} className="text-red-600 text-sm">
+            <p key={i} className="text-red-400 text-sm">
               {err}
             </p>
           ))}
@@ -71,15 +71,15 @@ export function ReviewForm({
       )}
 
       {submitError && (
-        <div className="bg-red-50 border border-red-200 rounded p-3">
-          <p className="text-red-600 text-sm">{submitError}</p>
+        <div className="bg-red-900/30 border border-red-700 rounded p-3">
+          <p className="text-red-400 text-sm">{submitError}</p>
         </div>
       )}
 
       <div>
         <label
           htmlFor="reviewerName"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-300"
         >
           Your Name
         </label>
@@ -88,7 +88,7 @@ export function ReviewForm({
           type="text"
           value={reviewerName}
           onChange={(e) => setReviewerName(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-white shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           placeholder="Enter your name"
         />
       </div>
@@ -96,7 +96,7 @@ export function ReviewForm({
       <div>
         <label
           htmlFor="rating"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-300"
         >
           Rating
         </label>
@@ -104,7 +104,7 @@ export function ReviewForm({
           id="rating"
           value={rating}
           onChange={(e) => setRating(Number(e.target.value))}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-white shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
           {[5, 4, 3, 2, 1].map((r) => (
             <option key={r} value={r}>
@@ -117,7 +117,7 @@ export function ReviewForm({
       <div>
         <label
           htmlFor="reviewText"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-300"
         >
           Review
         </label>
@@ -126,7 +126,7 @@ export function ReviewForm({
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={4}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-white shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           placeholder="Write your review..."
         />
       </div>
@@ -134,7 +134,7 @@ export function ReviewForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-md bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full rounded-md bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Submitting..." : "Submit Review"}
       </button>

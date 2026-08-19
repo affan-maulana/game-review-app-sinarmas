@@ -23,7 +23,7 @@ export default function GameDetailPage() {
   } = useReviews(id);
 
   if (gameLoading) {
-    return <p className="text-gray-500">Loading game details...</p>;
+    return <p className="text-gray-300">Loading game details...</p>;
   }
 
   if (gameError || !game) {
@@ -32,7 +32,7 @@ export default function GameDetailPage() {
         <p className="text-red-500 mb-4">
           Error: {gameError || "Game not found"}
         </p>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="text-blue-400 hover:underline">
           Back to games
         </Link>
       </div>
@@ -44,7 +44,7 @@ export default function GameDetailPage() {
       <div>
         <Link
           href="/"
-          className="text-blue-600 hover:underline text-sm mb-4 inline-block"
+          className="text-blue-400 hover:underline text-sm mb-4 inline-block"
         >
           &larr; Back to games
         </Link>
@@ -52,7 +52,7 @@ export default function GameDetailPage() {
       </div>
 
       <div>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Reviews</h2>
+        <h2 className="text-xl font-bold text-white mb-4">Reviews</h2>
         <ReviewList
           reviews={reviews}
           loading={reviewsLoading}
@@ -60,7 +60,7 @@ export default function GameDetailPage() {
         />
       </div>
 
-      <div className="border-t border-gray-200 pt-6">
+      <div className="border-t border-gray-700 pt-6">
         <ReviewForm
           onSubmit={createReview}
           isSubmitting={isSubmitting}

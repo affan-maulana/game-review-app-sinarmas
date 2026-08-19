@@ -8,7 +8,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Games</h1>
+      <h1 className="text-2xl font-bold mb-6 text-white">Games</h1>
       <GameList games={games} loading={loading} error={error} />
     </div>
   );
